@@ -1,17 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDarkToggle } from '../state/ThemeProvider';
 
-const Header = ({ handleThemeToggle }) => {
+const Header = () => {
+  const toggleDarkMode = useDarkToggle();
   return (
     <header>
       <h1>Theme Switch Lab</h1>
-      <button onClick={handleThemeToggle}>Toggle theme?</button>
+      <button onClick={toggleDarkMode}>Toggle theme?</button>
     </header>
   );
-};
-
-Header.propTypes = {
-  handleThemeToggle: PropTypes.func.isRequired
 };
 
 export default Header;
