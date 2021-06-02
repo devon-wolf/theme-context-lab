@@ -2,21 +2,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDarkMode } from '../state/ThemeProvider';
-import style from './ListPage.css';
 
 const ListPage = ({ results }) => {
   const darkMode = useDarkMode();
 
+  const styleObj = darkMode ? {
+    backgroundColor: '#000000',
+    color: '#FFFFFF'
+  } : {};
+
   return (
-    <main className={darkMode ? style.dark : ''}>
-      <ul>
-        {results.map(result => (
-          <li key={result.name}>
-            {result.name}
-          </li>
-        ))}
-      </ul>
-    </main>
+
+    <ul aria-label="list of fake data" style={styleObj}>
+      {results.map(result => (
+        <li key={result.name} aria-label="list item">
+          {result.name}
+        </li>
+      ))}
+    </ul>
+
   );
 };
 

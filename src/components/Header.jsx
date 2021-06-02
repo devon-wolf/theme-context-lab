@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <header>
       <h1>Theme Switch Lab</h1>
-      <button onClick={toggleDarkMode}>Toggle theme?</button>
+      <button
+        aria-label="dark mode toggle"
+        onClick={toggleDarkMode}
+      >
+		Toggle dark mode?
+      </button>
     </header>
   );
 };
